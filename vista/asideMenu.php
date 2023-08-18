@@ -57,268 +57,292 @@ function habilitado($idPermiso)
 with font-awesome or any other icon font library -->
                         <?php if (habilitado(1) != null) {
                         ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Usuario
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VUsuario" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de Usuarios</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="MCargarRegistrosUsuarios()">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Carcar registros</p>
-                                    </a>
-                                </li>
-                            </ul>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p>
+                                        Usuario
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VUsuario" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista de Usuarios</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" onclick="MCargarRegistrosUsuarios()">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Carcar registros</p>
+                                        </a>
+                                    </li>
+                                </ul>
 
-                        </li>
+                            </li>
                         <?php } ?>
 
                         <?php if (habilitado(7) != null) {
                         ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Clientes
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VCliente" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de Clientes</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Clientes
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VCliente" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista de Clientes</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         <?php } ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-toolbox"></i>
-                                <p>
-                                    Herramienta Reci/Entre
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VHerramientas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Herramientas SAE-LAB</p>
-                                    </a>
-                                    <a href="VLogHerramientas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Log Herramientas</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tools"></i>
-                                <p>
-                                    Control Herramientas
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VControlHerramientas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Herramientas Completas</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="VCalibracion" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Origen o Calibracion</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="VDBaja" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dados De Baja</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="VRepHerramientas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Reporte Herramientas</p>
-                                    </a>
-                                </li>
-                            </ul>
 
-                        </li>
+                        <?php if (habilitado(10) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-toolbox"></i>
+                                    <p>
+                                        Herramienta Reci/Entre
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VHerramientas" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Herramientas SAE-LAB</p>
+                                        </a>
+                                        <a href="VLogHerramientas" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Log Herramientas</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-wrench"></i>
-                                <p>
-                                    Paquete Servicio
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VServicio" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de Servicios</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php if (habilitado(11) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-tools"></i>
+                                    <p>
+                                        Control Herramientas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VControlHerramientas" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Herramientas Completas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="VCalibracion" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Origen o Calibracion</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="VDBaja" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Dados De Baja</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="VRepHerramientas" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Reporte Herramientas</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        <?php } ?>
+
+                        <?php if (habilitado(12) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-wrench"></i>
+                                    <p>
+                                        Paquete Servicio
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VServicio" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista de Servicios</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
 
                         <?php if (habilitado(6) != null) {
                         ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    Archivos
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VArchivos" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Subir Archivos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="VCliente" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Archivos Compartidos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p>
+                                        Archivos
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VArchivos" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Subir Archivos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="VCliente" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Archivos Compartidos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         <?php } ?>
 
                         <?php if (habilitado(3) != null) {
                         ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-check"></i>
-                                <p>
-                                    Autorizacion
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VAutorizacion" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de Autorizaciones</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-check"></i>
+                                    <p>
+                                        Autorizacion
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VAutorizacion" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista de Autorizaciones</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         <?php } ?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-box-open"></i>
-                                <p>
-                                    Materiales
 
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VMaterial" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista Materiales</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="MCargarRegistrosMateriales()">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Carcar registros</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php if (habilitado(8) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-box-open"></i>
+                                    <p>
+                                        Materiales
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Registro Tarjetas
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <?php if (habilitado(5) != null) {
-                                ?>
-                                <li class="nav-item">
-                                    <a href="VSeguimiento" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Registrar</p>
-                                    </a>
-                                </li>
-                                <?php } ?>
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VMaterial" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista Materiales</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" onclick="MCargarRegistrosMateriales()">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Carcar registros</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
 
-                                <?php if (habilitado(4) != null) {
-                                ?>
-                                <li class="nav-item">
-                                    <a href="BusTramite" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Buscar</p>
-                                    </a>
-                                </li>
-                                <?php } ?>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="MRegMovSeguimiento()">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Movimiento</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="MCargarRegistros()">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Carcar registros</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php if (habilitado(5) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-book"></i>
+                                    <p>
+                                        Registro Tarjetas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <?php if (habilitado(5) != null) {
+                                    ?>
+                                        <li class="nav-item">
+                                            <a href="VSeguimiento" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Registrar</p>
+                                            </a>
+                                        </li>
+                                    <?php } ?>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Control Tarjetas
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="VMarcaciones" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista Completa</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                                    <?php if (habilitado(4) != null) {
+                                    ?>
+                                        <li class="nav-item">
+                                            <a href="BusTramite" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Buscar</p>
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" onclick="MRegMovSeguimiento()">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Movimiento</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" onclick="MCargarRegistros()">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Carcar registros</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
 
-                        <li class="nav-header">OTROS</li>
-                        <li class="nav-item">
-                            <a href="VInforme" class="nav-link">
-                                <i class="nav-icon fas fa-paste"></i>
-                                <p>Informes</p>
-                            </a>
-                        </li>
+                        <?php if (habilitado(14) != null) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-cogs"></i>
+                                    <p>
+                                        Reporte Control Tarjetas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="VMarcaciones" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lista Completa</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
+
+                        <?php if (habilitado(15) != null) {
+                        ?>
+                            <li class="nav-header">OTROS</li>
+                            <li class="nav-item">
+                                <a href="VInforme" class="nav-link">
+                                    <i class="nav-icon fas fa-paste"></i>
+                                    <p>Informes Reporte</p>
+                                </a>
+                            </li>
+                        <?php } ?>
 
                         <li class="nav-item">
                             <a href="salir" class="nav-link">
