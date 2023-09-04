@@ -144,11 +144,27 @@ class ModeloLogHerramientas
 
     static public function mdlInfoLogEnvioEstado($id)
     {
-      $stmt = Conexion::conectar()->prepare("update log_herramientas set email_envio=1 where id_log_herramientas=$id");
-      $stmt->execute();
-      return $stmt->fetch();
-      $stmt->close();
-      $stmt->null;
+        $stmt = Conexion::conectar()->prepare("update log_herramientas set email_envio=1 where id_log_herramientas=$id");
+        $stmt->execute();
+        return $stmt->fetch();
+        $stmt->close();
+        $stmt->null;
     }
-  
+
+
+    static public function mdlDevolucionHerramienta($data)
+    {
+        $id = $data["idPrestamo"];
+        $items = json_encode($data["arregloCarrito2"]);
+
+        $stmt = Conexion::conectar()->prepare("update log_herramientas set codigo_herramientas = '$items' where id_log_herramientas=$id");
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "error";
+        }
+
+        $stmt->close();
+        $stmt->null;
+    }
 }

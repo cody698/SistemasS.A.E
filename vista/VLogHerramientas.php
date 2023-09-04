@@ -82,24 +82,14 @@
                                     } ?>
                                 </td>
                                 <td>
-                                    
+
                                     <div class="btn-group btn-group-sm">
                                         <button class="btn btn-secondary" onclick="MVerLogHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
                                             <i class="fas fa-eye"></i>
                                         </button>
-                                        <?php if ($value["tipo"] == 'ENTRADA') {
-                                        ?>
-                                            <button class="btn btn-warning" disabled onclick="MDevolverHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
-                                                <i class="fas fa-sign-out-alt"></i>
-                                            </button>
-                                        <?php
-                                        } else {
-                                        ?>
-                                            <button class="btn btn-warning" onclick="MDevolverHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
-                                                <i class="fas fa-sign-out-alt"></i>
-                                            </button>
-                                        <?php
-                                        } ?>
+                                        <button class="btn btn-warning" onclick="MDevolucionHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                        </button>
                                     </div>
 
                                 </td>

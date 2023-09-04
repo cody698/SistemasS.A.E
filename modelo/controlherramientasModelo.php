@@ -204,26 +204,39 @@ class ModeloControlHerramientas
 
   static public function mdlRepHerramienta($data)
   {
-
     $nom = $data["nomHerramienta"];
-
-    $stmt = Conexion::conectar()->prepare("select * from control_herramientas
-    where ubicacion_controlherramientas='$nom'");
-    $stmt->execute();
-    return $stmt->fetchAll();
-    $stmt->close();
-    $stmt->null;
+    if ($data["nomHerramienta"] == "Todos") {
+      $stmt = Conexion::conectar()->prepare("select * from control_herramientas");
+      $stmt->execute();
+      return $stmt->fetchAll();
+      $stmt->close();
+      $stmt->null;
+    } else {
+      $stmt = Conexion::conectar()->prepare("select * from control_herramientas
+                                              where ubicacion_controlherramientas='$nom'");
+      $stmt->execute();
+      return $stmt->fetchAll();
+      $stmt->close();
+      $stmt->null;
+    }
   }
 
   static public function mdlHerramientas($data)
   {
-
-    $stmt = Conexion::conectar()->prepare("select * from control_herramientas
-    where ubicacion_controlherramientas='$data'");
-    $stmt->execute();
-    return $stmt->fetchAll();
-    $stmt->close();
-    $stmt->null;
+    if ($data = "Todos") {
+      $stmt = Conexion::conectar()->prepare("select * from control_herramientas");
+      $stmt->execute();
+      return $stmt->fetchAll();
+      $stmt->close();
+      $stmt->null;
+    }else{
+      $stmt = Conexion::conectar()->prepare("select * from control_herramientas
+      where ubicacion_controlherramientas='$data'");
+      $stmt->execute();
+      return $stmt->fetchAll();
+      $stmt->close();
+      $stmt->null;
+    }
   }
 
   static public function mdlPorHerramientas($id)
@@ -256,7 +269,7 @@ class ModeloControlHerramientas
     $encargadoInforme = $data["encargadoInforme"];
     $asuntoInforme = $data["asuntoInforme"];
     $descInforme = $data["descInforme"];
-    
+
     $stmt = Conexion::conectar()->prepare("insert into informes(fecha_informe, de_informe, a_informe, num_informe, asunto_informe, conclusion_informe, encargado_informe, herra_seleccionados) values('$fechaInforme', '$respAlmacen', '$repTecnico', '$numInforme', '$asuntoInforme', '$descInforme', '$encargadoInforme', '$seleccionados')");
 
     if ($stmt->execute()) {
@@ -286,5 +299,4 @@ class ModeloControlHerramientas
     $stmt->close();
     $stmt->null;
   }
-  
 }

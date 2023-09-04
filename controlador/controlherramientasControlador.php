@@ -9,6 +9,7 @@ if (isset($ruta["query"])) {
     $ruta["query"] == "ctrRegRegistrosControlHerramientas" ||
     $ruta["query"] == "ctrRepHerramientas" ||
     $ruta["query"] == "ctrRegDatosInforme" ||
+    $ruta["query"] == "ctrDevolucionHerramienta" ||
     $ruta["query"] == "ctrEliControlHerramienta"
   ) {
     $metodo = $ruta["query"];
@@ -38,7 +39,7 @@ class ControladorHerramientas
     return $respuesta;
   }
 
-  
+
 
   static public function ctrRegControlHerramienta()
   {
@@ -195,7 +196,6 @@ class ControladorHerramientas
     );
     $respuesta = ModeloControlHerramientas::mdlRepHerramienta($data);
     foreach ($respuesta as $value) {
-
 ?>
 
       <tr>
@@ -244,9 +244,10 @@ class ControladorHerramientas
   {
     $respuesta = ModeloControlHerramientas::mdlSelecHerramientas($id);
     return $respuesta;
-  }  
+  }
 
-  static public function ctrRegDatosInforme(){
+  static public function ctrRegDatosInforme()
+  {
     require "../modelo/controlherramientasModelo.php";
     $data = array(
       "seleccionados" => $_POST['seleccionados'],
@@ -267,7 +268,7 @@ class ControladorHerramientas
     $respuesta = ModeloControlHerramientas::mdlInfoHerramienta();
     return $respuesta;
   }
-  
+
   static public function ctrInfoInforme($id)
   {
     $respuesta = ModeloControlHerramientas::mdlInfoInforme($id);

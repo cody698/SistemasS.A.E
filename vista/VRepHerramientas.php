@@ -24,6 +24,7 @@
 
                               <select class="form-control input-group-append" name="nomHerramienta" id="nomHerramienta">
                                   <option value="">-- Seleccionar --</option>
+                                  <option value="Todos">T O D O S</option>
                                   <?php
                                     $herra = ControladorHerramientas::ctrInfoControlHerramientas();
                                     foreach ($herra as $value) {

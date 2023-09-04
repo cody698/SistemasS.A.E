@@ -5,16 +5,36 @@ require_once "../../modelo/controlherramientasModelo.php";
 
 $id = $_GET["id"];
 
+class PDF extends FPDF
+{
+// Pie de página
+function Footer()
+{
+    // Posición: a 1,5 cm del final
+    $this->SetY(-20);
+    // Arial italic 8
+    $this->SetFont('Arial','I',8);
+    // Número de página
+    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+}
+}
 
 $herra = ControladorHerramientas::ctrHerramientas($id);
 
 $today = getdate();
 
 
-$pdf = new FPDF('P', 'mm', 'Letter');
+
+
+$pdf = new PDF('P', 'mm', 'Letter');
+$pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetAutoPageBreak(true, 1);
-$pdf->SetMargins(5, 5, 5);
+/* $pdf->SetFont('Times','',12); */
+
+/* $pdf = new FPDF('P', 'mm', 'Letter');
+$pdf->AddPage(); */
+/* $pdf->SetAutoPageBreak(true, 1); */
+/* $pdf->SetMargins(5, 5, 5); */
 
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Image('../../assest/imagenes/gota.jpg', 8, 85, 200);
@@ -136,7 +156,7 @@ date_default_timezone_set('America/La_Paz');
 //PIE DE PÁGINA
 
 $pdf->SetFont("times", "", 8);
-$pdf->SetY(-30);
+$pdf->SetY(-40);
 $pdf->SetX(25);
 $pdf->Cell(40, 8, "PREPARADO POR:", "T", 0, "C");
 //$pdf->Cell(40, 8, "", 0, "C");
@@ -145,11 +165,12 @@ $pdf->Cell(40, 8, utf8_decode("Vo Bo CONTROL DE CALIDAD"), "T", 0, "C");
 $pdf->SetX(145);
 $pdf->Cell(40, 8, utf8_decode("FECHA DE ACTUALIZACIÓN: ") . date('d/m/Y'), 0, 0, "C");
 
-$pdf->SetY(-20);
+$pdf->SetY(-30);
 $pdf->SetX(8);
 $pdf->SetFont("times", "", 8);
 $pdf->Cell(65, 8, 'FORM SAESM104', 1, 0, 'C');
 $pdf->Cell(70, 8, 'REV.05', 1, 0, 'C');
 $pdf->Cell(65, 8, utf8_decode("FECHA: ") . date('11/03/2022'), 1, 0, 'C');
+
 
 $pdf->Output();

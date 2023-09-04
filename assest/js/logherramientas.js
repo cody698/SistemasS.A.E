@@ -143,3 +143,52 @@ function MDevolverHerramienta(id) {
     }
   })
 }
+
+function MDevolucionHerramienta(id){
+  $("#modal-lg").modal("show")
+ 
+ var obj=""
+ $.ajax({
+     type:"POST",
+     url:"vista/herramientas/MDevolverLogHerramientas.php?id="+id,
+     data:obj,
+     success:function(data){
+         $("#content-lg").html(data)
+     }
+ })
+}
+
+function RegDevHerramientas() {
+
+  var formData = new FormData($("#FDevHerramientas")[0])
+  $.ajax({
+    type: "POST",
+    url: "controlador/logherramientasControlador.php?ctrDevolucionHerramienta",
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (data) {
+      console.log(data)
+      if (data == "ok") {
+        Swal.fire({
+          icon: 'success',
+          showConfirmButton: false,
+          title: 'Devolución realizada',
+          timer: 1000
+        })
+        setTimeout(function () {
+          location.reload()
+        }, 1200)
+      } else {
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          title: 'Error!!!',
+          timer: 1500
+        })
+      }
+    }
+  })
+}
+

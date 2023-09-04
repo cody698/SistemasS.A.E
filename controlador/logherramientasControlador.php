@@ -5,7 +5,8 @@ $ruta = parse_url($_SERVER['REQUEST_URI']);
 if (isset($ruta["query"])) {
     if (
         $ruta["query"] == "ctrRegLogHerramientas" ||
-        $ruta["query"] == "ctrDevHerramienta"
+        $ruta["query"] == "ctrDevHerramienta" ||
+        $ruta["query"] == "ctrDevolucionHerramienta"
     ) {
 
         $metodo = $ruta["query"];
@@ -107,8 +108,54 @@ class ControladorLogHerramientas
     }
 
     static public function ctrInfoLogEnvioEstado($id)
-  {
-    $respuesta = ModeloLogHerramientas::mdlInfoLogEnvioEstado($id);
-    return $respuesta;
-  }
+    {
+        $respuesta = ModeloLogHerramientas::mdlInfoLogEnvioEstado($id);
+        return $respuesta;
+    }
+
+    static public function ctrDevolucionHerramienta()
+    {
+        require_once "../modelo/logherramientasModelo.php";
+
+        $idPrestamo = $_POST["idPrestamo"];
+        $idHerramientas = $_POST["ids"];
+        $cantHerramienta = $_POST["cantidad"];
+        $cantActualHerramienta = $_POST["cantidadActual"];
+
+        //uniendo los datos en arreglos asociativos donde ids y cantidad son arreglos asociativos
+        $arregloCarrito2 = [];
+        for ($i = 0; $i < count($idHerramientas); $i++) {
+            $arregloItem = array(
+                "cantidad" => $cantActualHerramienta[$i] - $cantHerramienta[$i],
+                "id" => $idHerramientas[$i]
+            );
+            array_push($arregloCarrito2, $arregloItem);
+        }
+
+        //uniendo los datos para actualizar stock en herramientas
+        $arregloCarrito3 = [];
+        for ($i = 0; $i < count($idHerramientas); $i++) {
+            $arregloItems = array(
+                "cant" =>$cantHerramienta[$i],
+                "ids" => $idHerramientas[$i]
+            );
+            array_push($arregloCarrito3, $arregloItems);
+        }
+
+        $data = array(
+            "idPrestamo" => $idPrestamo,
+            "arregloCarrito2" => $arregloCarrito2
+        );
+
+        $respuesta = ModeloLogHerramientas::mdlDevolucionHerramienta($data);
+        if ($respuesta = "ok") {
+            for ($i = 0; $i < count($arregloCarrito3); $i++) {
+                $id = $arregloCarrito3[$i]['ids'];
+                $cantidad = $arregloCarrito3[$i]['cant'];
+                $respuestaEstado = ModeloLogHerramientas::mdlActualizaStock($id, $cantidad);
+            }
+            echo $respuesta;
+        }
+    
+    }
 }
