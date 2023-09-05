@@ -101,17 +101,18 @@
                 ?>
 
                 <?php
+
                 if ($totalDias <= 10 and $totalDias >= 1) {
                 ?>
-                  <td class="bg-warning"><?php echo $value["diasalerta_controlherramientas"]; ?></td>
+                  <td class="bg-warning"><?php echo $totalDias; ?></td>
                 <?php
                 } elseif ($totalDias < 1) {
                 ?>
-                  <td class="bg-danger"><?php echo $value["diasalerta_controlherramientas"]; ?></td>
+                  <td class="bg-danger"><?php echo $totalDias; ?></td>
                 <?php
                 } else {
                 ?>
-                  <td><?php echo $value["diasalerta_controlherramientas"]; ?></td>
+                  <td><?php echo $totalDias; ?></td>
                 <?php
                 }
                 ?>

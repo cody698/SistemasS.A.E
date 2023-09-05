@@ -46,6 +46,7 @@
                                 <button class="btn btn-secondary" onclick="MVerInforme(<?php echo $value['id_informe']; ?>)">
                                     <i class="fas fa-eye"></i>
                                 </button>
+                                <a class="btn btn-dark" href="vista/reportes/repHerramientaSelecSinFirma.php?id=<?php echo $value["id_informe"]; ?>" target="_blank"><i class="fas fa-print"></i></a>
                                 <a class="btn btn-success" href="vista/reportes/repHerramientaSelec.php?id=<?php echo $value["id_informe"]; ?>" target="_blank"><i class="fas fa-print"></i></a>
                             </div>
                         </td>

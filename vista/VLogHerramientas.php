@@ -51,7 +51,7 @@
                                     <td><?php echo $value["fecha_hora"]; ?></td>
                                     <script>
                                         function MEnviarEmails() {
-                                            /* console.log('enviado....'); */
+                                           
                                             var obj = "";
                                             $.ajax({
                                                 type: "POST",
@@ -69,15 +69,25 @@
                                     <td><?php echo $value["fecha_hora"]; ?></td>
                                 <?php
                                 }
+                          //evaluar si todos los items fueron devueltos
+                          //ojo.- con esto el campo lod_herramientas.tipo queda obsoleto
+                          $tipoAcm=0;
+                          $cantHerr=json_decode($value["codigo_herramientas"]);
+
+                          foreach($cantHerr as $cant){
+                            
+                              $tipoAcm=$tipoAcm+$cant->cantidad;
+                            
+                          }
                                 ?>
 
-                                <td><?php if ($value["tipo"] == 'ENTRADA') {
+                                <td><?php if ($tipoAcm == 0) {
                                     ?>
-                                        <span class="badge badge-success">ENTRADA</span>
+                                        <span class="badge badge-success">DEVUELTO</span>
                                     <?php
                                     } else {
                                     ?>
-                                        <span class="badge badge-danger">SALIDA</span>
+                                        <span class="badge badge-danger">PRESTADO</span>
                                     <?php
                                     } ?>
                                 </td>
@@ -87,7 +97,7 @@
                                         <button class="btn btn-secondary" onclick="MVerLogHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
                                             <i class="fas fa-eye"></i>
                                         </button>
-                                        <button class="btn btn-warning" onclick="MDevolucionHerramienta(<?php echo $value['id_log_herramientas']; ?>)">
+                                        <button class="btn btn-warning" onclick="MDevolucionHerramienta(<?php echo $value['id_log_herramientas']; ?>)" <?php if($tipoAcm==0):?>disabled<?php endif;?>>
                                             <i class="fas fa-sign-out-alt"></i>
                                         </button>
                                     </div>

@@ -22,7 +22,6 @@ $herra = json_decode($herramientas["codigo_herramientas"]);
             <form id="FDevHerramientas">
                 <input type="hidden" name="idPrestamo" id="idPrestamo" value="<?php echo $id ?>">
                 
-                <h4 class="text-center">Descripción de Herramientas </h4>
                 <table class="table" style="width: 80%; margin: auto;">
                     <thead >
                         <tr >
